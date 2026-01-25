@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abishek V - AI & ML Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            margin: 0 auto 20px;
+            display: block;
+            background: white;
+        }
+    
+
+        
+        .header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        
+        .header .tagline {
+            font-size: 18px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .social-links a {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .bio {
+            line-height: 1.8;
+            color: #444;
+            font-size: 16px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .projects .project-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+        
+        .projects .project-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-card h3 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+        
+        .education-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .education-item h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        
+        .education-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .experience-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 25px;
+            border-left: 2px solid #667eea;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+        
+        .experience-item h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .date {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item ul {
+            margin-left: 20px;
+            color: #666;
+        }
+        
+        .experience-item li {
+            margin-bottom: 5px;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .cert-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .header h1 {
+                font-size: 32px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .certifications {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="profile.jpg" alt="Abishek V" class="profile-img">
+            <h1>Abishek V</h1>
+            <p class="tagline">AI & Machine Learning Student | Aspiring Full Stack Developer & Data Engineer</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/abishek-v-a636b22ba" target="_blank">🔗 LinkedIn</a>
+                <a href="https://github.com/Abishek-2121" target="_blank">💻 GitHub</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>About Me</h2>
+                <p class="bio">
+                    I'm a passionate and curious learner currently pursuing my B.Sc (Artificial Intelligence & Machine Learning) at Bharathidasan University. I'm actively collaborating with the Entrepreneur Development Cell at Swami Dayananda College of Arts & Science. I'm interested in AI, Data Science, and Full Stack Development, and constantly seek opportunities to apply my knowledge to real-world challenges. I believe in the power of innovation and lifelong learning.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2>Skills</h2>
+                <div class="skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">R Language</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">Data Science</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">AI Development</span>
+                </div>
+            </div>
+            
+            <div class="section projects">
+                <h2>Featured Projects</h2>
+                <div class="project-card">
+                    <h3>🤖 Advanced AI Jetbot</h3>
+                    <p>Developed an autonomous robot using AI and machine learning techniques for intelligent navigation and decision-making.</p>
+                </div>
+                <div class="project-card">
+                    <h3>🏥 Cancer Prediction Using R Language</h3>
+                    <p>Built a predictive model using statistical analysis and machine learning algorithms in R to predict cancer outcomes from medical data.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>B.Sc in Artificial Intelligence & Machine Learning</h3>
+                    <p><strong>Bharathidasan University</strong></p>
+                    <p>Swami Dayananda College of Arts & Science, Manjakkudi, Tiruvarur</p>
+                    <p>Currently pursuing (Expected graduation: 2026)</p>
+                </div>
+                <div class="education-item">
+                    <h3>Christ The King Matric. Hr. Sec. School</h3>
+                    <p>(2009-2023)</p>
+                </div>
+                <div class="education-item">
+                    <h3>Dakshina Bharat Hindi Prachar Sabha</h3>
+                    <p><strong>Bachelor of Arts - BA (Level - 6) Hindi Language</strong></p>
+                    <p>Hindi Praveen Vidhyalaya</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Experience & Involvement</h2>
+                <div class="experience-item">
+                    <h3>Entrepreneur Development Cell</h3>
+                    <p class="company">Swami Dayananda College of Arts & Science</p>
+                    <p class="date">Active Collaborator</p>
+                    <ul>
+                        <li>Contributing to entrepreneurial initiatives and innovation projects</li>
+                        <li>Collaborating with peers on technology-driven solutions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Certifications</h2>
+                <div class="certifications">
+                    <div class="cert-badge">📊 Data Science & Machine Learning - NSIC</div>
+                    <div class="cert-badge">Power BI Worksop</div>
+                    <div class="cert-badge">AI Tools Workshop</div>
+                    <div class="cert-badge">Zoho Young Creator Training</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
